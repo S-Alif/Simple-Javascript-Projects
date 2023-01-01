@@ -1,5 +1,4 @@
-# Simple-Javascript-Projects #
-
+# Simple Javascript Projects #
 Some simple and beginner javascript projects
 
 <hr>
