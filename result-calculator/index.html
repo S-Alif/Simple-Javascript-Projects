@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Simple Result Calculator</title>
+</head>
+<body>
+
+    <h3 class="title">Simple Result Calculator</h3>
+    
+    <div class="container">        
+
+        <!-- result inputs -->
+        <div class="content">
+            <div class="inputs">
+                <h4>Enter subject marks below :</h4>
+
+                <input type="text" name="" id="sub1" placeholder="Enter Math Marks" required>
+                <input type="text" name="" id="sub2" placeholder="Enter Chemistry Marks" required>
+                <input type="text" name="" id="sub3" placeholder="Enter Physics Marks" required>
+                <input type="text" name="" id="sub4" placeholder="Enter Biology Marks" required>
+                <input type="text" name="" id="sub5" placeholder="Enter History Marks" required>
+
+            </div>
+
+            <button class="btn reset" type="button" onclick="reset()">Reset</button>
+            <button class="btn" type="button" onclick="calculate()">Calculate Result</button>            
+        </div>
+
+        <!-- show result -->
+        <div class="content">
+            <div class="result">
+
+                <h4>Your GPA : </h4>
+                <h1 class="show-result" id="show-result">0.00</h1>
+                <p class="advice" id="advice">Advice will be shown based on result</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- js -->
+    <script src="script.js"></script>
+</body>
+</html>

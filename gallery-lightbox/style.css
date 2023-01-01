@@ -1,0 +1,150 @@
+/* google font : open sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'open sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* container */
+.container{
+    padding: 30px 0;
+    max-width: 960px;
+    min-width: 370px;
+}
+
+/* title */
+.container .title{
+    padding: 20px 40px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 40px;
+    border: 2px solid;
+}
+
+/* content */
+.container .content{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.815);
+    backdrop-filter: blur(5px);
+}
+.container .content .images{
+    flex-basis: 33%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.226);
+    transition: 0.5s ease;
+}
+.container .images .overlay{
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: rgba(0, 0, 0, 0.548);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+.container .images .overlay a{
+    color: #fff;
+    font-size: 30px;
+}
+
+.container .content .images:hover{
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.376);
+    transition: 0.5s ease;
+}
+.container .content .images:hover .overlay{
+    height: 100%;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+.container .content .images img{
+    transform: scale(1);
+    transition: 0.5s ease;
+}
+.container .content .images:hover img{
+    transform: scale(1.2);
+    transition: 0.5s ease;
+}
+
+/* show gallery - lightbox */
+.gallery-show{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.506);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+.gallery-show button{
+    position: absolute;
+    left: 90%;
+    top: 5%;
+    transform: translate(-90%,-5%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+}
+.gallery-show.open{
+    opacity: 1;
+    visibility: visible;
+}
+.gallery-show .box{
+    max-width: 1080px;
+    max-height: 608px;
+    overflow: hidden;
+}
+.gallery-show .box img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media screen and (max-width : 992px) {
+    .container .content .images{
+        flex-basis: 50%;
+    }
+}

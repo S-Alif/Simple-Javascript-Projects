@@ -1,0 +1,78 @@
+/* google font : open sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'open sans', sans-serif!important;
+    background-color: #efecec;
+    text-align: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+
+/* container */
+.container .title{
+    padding-bottom: 10px;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* counter */
+.counter{
+    font-size: 200px;
+    font-weight: 700;
+    color: #5664ff;
+}
+.control .btn{
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: transparent;
+    cursor: pointer;
+}
+.decrease{
+    border: 2px solid #ff3b3b;
+    color: #ff3b3b;
+}
+.decrease:hover{
+    background-color: #ff3b3b;
+    color: #fff;
+}
+.increase{
+    border: 2px solid #0eae13;
+    color: #0eae13;
+}
+.increase:hover {
+    background-color: #0eae13;
+    color: #fff;
+}
+.reset{
+    border: 2px solid #5664ff;
+    color: #5664ff;
+}
+.reset:hover {
+    background-color: #5664ff;
+    color: #fff;
+}

@@ -1,0 +1,105 @@
+/* google font : open sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: antiquewhite;
+    overflow-x: hidden;
+    font-family: 'open sans', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* container */
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 15px;
+}
+
+/* title */
+.container .title{
+    padding: 20px 40px;
+    background-color: #fff;
+    border: 2px solid;
+    font-size: 30px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* content */
+.container .content{
+    max-width: 600px;
+    display: block;
+}
+.container .content .box{
+    padding-bottom: 30px;
+    width: 100%;
+    height: auto;
+}
+
+.box .question{
+    padding: 15px 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.box .question h4{
+    font-size: 22px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.box .question .icon{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    transform: translate(-95%, -50%);
+    transition: 0.5s;
+}
+
+/* answer */
+.box .answer{
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.box .answer p{
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* accordion open */
+.box.open .question .icon{
+    transform: translate(-95%, -50%) rotate(180deg);
+    transition: 0.5s;
+}
+.box.open .answer{
+    max-height: 200px;
+    transition: 0.5s;
+}

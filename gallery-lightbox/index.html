@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <title>Lightbox gallery</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <h1 class="title">Simple Lightbox Gallery</h1>
+
+        <div class="content">
+
+            <div class="images">
+                <img src="img/img-1.jpg" alt="">
+                <div class="overlay">
+                    <a href="img/img-1.jpg" class="zoom"><i class="fa-sharp fa-solid fa-maximize"></i></a>
+                </div>
+            </div>
+            <div class="images">
+                <img src="img/img-2.jpg" alt="">
+                <div class="overlay">
+                    <a href="img/img-2.jpg" class="zoom"><i class="fa-sharp fa-solid fa-maximize"></i></a>
+                </div>
+            </div>
+            <div class="images">
+                <img src="img/img-3.jpg" alt="">
+                <div class="overlay">
+                    <a href="img/img-3.jpg" class="zoom"><i class="fa-sharp fa-solid fa-maximize"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- modal -->
+    <div class="gallery-show" id="modal-gallery">
+        <button type="button" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="box">
+            <img src="" alt="" id="show-img">
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="script.js"></script>
+</body>
+</html>
