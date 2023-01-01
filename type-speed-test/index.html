@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Type speed test</title>
+</head>
+<body>
+
+    <section class="wrapper">
+        <div class="container">
+            
+            <!-- timer -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="timer"><span id="minute">00</span> : <span id="second">00</span></div>
+                </div>
+            </div>
+
+            <!-- text to be typed -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="display-text">
+                        <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, doloremque! Magnam provident ratione, nemo dolorem iure expedita repudiandae qui soluta</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- text field to type display text -->
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea name="" id="typed-text" cols="30" rows="10" placeholder="Test your typing speed"></textarea>
+                </div>
+            </div>
+
+            <!-- test result -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="test-result">
+                        <h5>Mistakes : <span id="mistakes"></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="test-result">
+                        <h5>Elasped time : <span id="elasped-time"></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="test-result">
+                        <h5>Accuracy : <span id="accuracy"></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="test-result">
+                        <h5>Word : <span id="words"></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-pull-4">
+                    <div class="test-result">
+                        <h5>Characters : <span id="characters"></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-success" id="try-again">Try Again</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- js -->
+    <script src="script.js"></script>
+</body>
+</html>
