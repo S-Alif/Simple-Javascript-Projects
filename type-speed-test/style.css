@@ -65,17 +65,31 @@ p, h5{
     font-weight: 600;
     border-radius: 5px;
     margin-bottom: 30px;
-    margin-top: 50px;
-    text-align: center;
+    margin-top: 20px;
     pointer-events: none;
     user-select: none;
 }
+.display-text p{
+    position: relative;
+    overflow: hidden;
+}
+/* .display-text p span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    color: transparent;
+    display: inline-block;
+} */
 
 /* text field to type display text */
 textarea{
     width: 100%;
     height: 200px;
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 10px;
     font-weight: 600;
     outline: none;
@@ -83,6 +97,7 @@ textarea{
     border: 2px solid transparent;
     border-radius: 5px;
     resize: none;
+    text-align: center;
 }
 textarea:focus{
     border: 2px solid rgb(254, 0, 0);
@@ -106,4 +121,8 @@ textarea:focus{
     padding: 15px;
     font-size: 17px;
     font-weight: 700;
+}
+
+.fault{
+    color: red!important;
 }
