@@ -1,5 +1,7 @@
+/* getting the text box */
 var textBox = document.getElementById('text-box');
 
+/* function calls when there is an input in the text box */
 textBox.addEventListener('input', function(){
 
     var showWord = document.getElementById('words');
