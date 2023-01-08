@@ -70,8 +70,10 @@ p, h5{
     user-select: none;
 }
 .display-text p{
+    color: #757575;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 /* .display-text p span{
     position: absolute;
@@ -121,8 +123,4 @@ textarea:focus{
     padding: 15px;
     font-size: 17px;
     font-weight: 700;
-}
-
-.fault{
-    color: red!important;
 }

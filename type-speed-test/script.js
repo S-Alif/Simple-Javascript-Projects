@@ -16,57 +16,108 @@ const texts = [
 /* get all the required things */
 var displayedText = document.querySelector('.display-text p');
 var textInBox = document.getElementById('typed-text');
+var mistakes = document.getElementById('mistakes');
+var time = document.getElementById('elasped-time');
+var showAccuracy = document.getElementById('accuracy');
+var words = document.getElementById('words');
+var typedcharacters = document.getElementById('characters');
+var minute = document.getElementById('minute');
+var seconds = document.getElementById('second');
+
+let total_mistakes = 0;
+let complete = true;
+let startTime;
 
 /* generate a number or index position to get the text from array object */
 var textNumber = Math.floor(Math.random() * texts.length);
 
-/* display the speed test text */
-async function displayText(){
-    // displayedText.innerHTML = texts[textNumber];
-    getText();
-};
-
-/* everytime the window loads displayText function will be called */
-window.addEventListener('load', displayText);
-
+/* everytime the window loads getText function will be called and new text will be loaded */
+window.addEventListener('load', getText);
 
 /* getting characters that are typed inside a span to process */
 function getText(){
     var testText = texts[textNumber];
-    // var splitText = testText.split(' ');
 
     testText.split('').forEach(element => {
         const mistype = document.createElement('span');
         mistype.innerText = element;
         displayedText.appendChild(mistype);
-        console.log(element)
     });
 };
 
+/* timer */
+function timer(){
+    startTime = new Date();
+    var timeSeconds = 0;
+    setInterval(() => {
+        timeSeconds = Math.round((new Date() - startTime) / 1000);
+
+        if(timeSeconds < 10){
+            seconds.textContent = 0 + ""+timeSeconds;
+        }
+        else if(timeSeconds == 60){
+            timer();
+        }else{
+            seconds.textContent = timeSeconds;
+        }
+
+    }, 1000);
+    setInterval(() => {
+        minute.textContent = 0 + ""+Math.round((new Date() - startTime) / (1000 * 60));
+    }, (1000 * 60));
+}
+
+/* start timer */
+
 /* result process */
 textInBox. addEventListener('input', () => {
-
+    
     var typedText = textInBox.value;
     var forTest = typedText.split('');
+
+    error = 0
     
-    characters++;
+    // show how many characters are typed
+    typedcharacters.textContent = typedText.length;
 
-    var error = 0;
 
+    // check for mistakes and identify / show mistakes
     var checkText = displayedText.querySelectorAll('span');
     checkText.forEach((e, index) => {
         
-        indexText = forTest[index];
-        console.log(checkText.innerText, indexText);
+        const indexText = forTest[index];
         
         if(indexText === e.innerText){
-            e.style.color = "green";
+            e.style.color = "#000";
+            e.style.textDecoration = "none";
         }
         else if(indexText == null){
-            e.style.color = "#000";
+            e.style.textDecoration = "none";
+            complete = false;           
         }
         else{
             e.style.color = "red";
+            e.style.textDecoration = "underline";
+            error++;
+            complete = false;
         }
-    })
-})
+    });
+
+    if(complete){
+        clearInterval(timer);
+        textInBox.disabled = true;
+    }
+
+    // show mistakes
+    mistakes.textContent = total_mistakes + error;
+
+    // show corrects
+    var corrects = typedText.length - (total_mistakes + error);
+    var accuracy = Math.round((corrects / typedText.length) * 100);
+
+    showAccuracy.textContent = accuracy + '%';
+    if(accuracy < 0 || accuracy == isNaN){
+        showAccuracy.textContent = 0 + '%';
+    }
+    
+});
