@@ -45,7 +45,11 @@ control.forEach(function(btn){
         if(classes.contains('increase')){
             a++;
         }else if(classes.contains('decrease')){
-            a--;
+            if(a == 0){
+                a = 0;
+            }else{
+                a--;
+            }
         }else{
             a = 0;
         }

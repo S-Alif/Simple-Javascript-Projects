@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Age Calculator</title>
+</head>
+<body>
+
+    <!-- alert -->
+    <div class="alert">
+        <p id="show-alert">alert</p>
+    </div>
+
+    <!-- main container -->
+    <div class="container">
+        <h3 class="title">age calculator</h3>
+        
+        <input type="date" id="birthday" placeholder="Enter your birthday">
+        <button type="button" id="calculate-btn" class="btn" onclick="check_input()">calculate age</button>
+    </div>
+
+    <!-- show the output -->
+    <div class="age-container">
+        <div class="age-content">
+            <h3 class="title" id="normal-title">Your Age</h3>
+            <h3 class="title" id="hbt">Happy birthday 🎉🎉</h3>
+
+            <p>
+                <span id="year"></span>
+                <span id="month"></span>
+                <span id="days"></span>
+            </p>
+
+            <button type="button" id="ok-btn" class="btn" onclick="close_age_container()">ok</button>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
