@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Frosted Glass Effect Maker</title>
+</head>
+<body>
+
+    <!-- main container -->
+    <div class="main-container">
+        <h3 class="title">Glassmorphism Effect CSS Generator</h3>
+
+        <div class="content">
+
+            <!-- control panel -->
+            <div class="control-panel">
+                <p>color transparency</p>
+                <input type="range" class="slider" id="opacity" min="0" max="1" value="0.2" step="0.01">
+
+                <p>blur</p>
+                <input type="range" class="slider" id="filter-blur" min="0" max="20" value="5" step="0.1">
+
+                <p>color</p>
+                <input type="color" class="slider" id="main-color" value="#ffffff">
+
+                <p>border size</p>
+                <input type="range" class="slider" id="border-size" min="0" max="5" value="2" step="0.1">
+
+                <p>border opacity</p>
+                <input type="range" class="slider" id="border-opacity" min="0" max="1" value="0.5" step="0.01">
+
+                <p>shadow</p>
+                <input type="range" class="slider" id="shadow" min="0" max="1" value="0.2" step="0.01">
+            </div>
+
+            <!-- show the result -->
+            <div class="showcase" id="showcase">
+                <p>see effect here</p>
+            </div>
+
+        </div>
+
+        <div class="code" id="code">
+            <p>.frosted-glass{</p>
+            <p class="data">background: rgba(<span id="red">255</span>, <span id="green">255</span>, <span id="blue">255</span>, <span id="color-opacity">0.2</span>);</p>
+            <p class="data">backdrop-filter: blur(<span id="blurr">5</span>px);</p>
+            <p class="data">border: <span id="brd-size">2</span>px solid rgba(255, 255, 255, <span id="brd-opacity">0.2</span>);</p>
+            <p class="data">box-shadow: 0 0 20px rgba(0, 0, 0, <span id="shd-opacity">0.2</span>);</p>
+            <p>}</p>
+        </div>
+
+        <button type="button" id="copyBtn" class="btn">Click to copy</button>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
