@@ -50,6 +50,7 @@ slider.forEach((e) => {
 copyBtn.addEventListener('click', () => {
     var range = document.createRange()
     range.selectNodeContents(document.getElementById('code'))
+    window.getSelection().removeAllRanges()
     window.getSelection().addRange(range)
     document.execCommand('copy')
     copyBtn.innerText = 'style copied'

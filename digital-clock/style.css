@@ -1,0 +1,62 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'mulish', sans-serif;
+    overflow-x: hidden;
+    user-select: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main container */
+.container{
+    min-width: 400px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
+    margin: 20px 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* title */
+.container .title{
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom-style: dashed;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* content */
+.container .content{
+    width: 100%;
+    display: block;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.container .content p{
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+    font-weight: 700;
+}
