@@ -30,7 +30,7 @@
             var time = new Date()
             
             // format the time using toLocaleString()
-            var getTime = time.toLocaleString('en-us', {hour: '2-digit', minute: '2-digit', second: '2-digit'})
+            var getTime = time.toLocaleString('en-us', {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true})
 
             // pass the  value
             showTime.innerText = getTime
