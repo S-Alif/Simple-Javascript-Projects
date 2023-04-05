@@ -15,27 +15,27 @@
         <h3 class="title">Digital Clock</h3>
 
         <div class="content">
-            <p id="time"></p>
+            <div id="time"></div>
         </div>
     </div>
     
 
     <script>
 
-        setInterval(function(){
-            // get the element
+        function time(){
+             // get the element
             var showTime = document.getElementById('time')
 
             // get the time
             var time = new Date()
-            
+
             // format the time using toLocaleString()
-            var getTime = time.toLocaleString('en-us', {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true})
+            var getTime = time.toLocaleString('en-us', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })
 
             // pass the  value
             showTime.innerText = getTime
-
-        }, 1000)
+        }
+        setInterval(time, 1000)   
 
     </script>
 </body>
