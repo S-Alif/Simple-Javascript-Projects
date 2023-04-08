@@ -1,1 +1,1 @@
-live demo : https://digital-js-clock.netlify.app/
+live demo : https://simple-js-project.netlify.app/projects/digital-clock/index.html
