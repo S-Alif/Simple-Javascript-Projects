@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Box-Shadow Generator</title>
+</head>
+<body>
+    
+    <div class="main-container">
+        <div class="content">
+
+            <!-- title -->
+            <h3 class="title">Simple Box Shadow Generator</h3>
+
+            <!-- test ground -->
+            <div class="test-ground" id="show-out">
+                <p>custmize box-shadow</p>
+            </div>
+
+            <!-- controls -->
+            <div class="controls">
+
+                <p>offset-x</p>
+                <input type="range" class="slider" id="offset-x" min="0" max="100" step="0.1" value="0">
+
+                <p>offset-y</p>
+                <input type="range" class="slider" id="offset-y" min="0" max="100" step="0.1" value="0">
+
+                <p>blur radius</p>
+                <input type="range" class="slider" id="blur-rad" min="0" max="100" step="0.1" value="10">
+
+                <p>spread</p>
+                <input type="range" class="slider" id="spread-rad" min="0" max="100" step="0.1" value="0">
+
+                <p>shadow type</p>
+                <select id="shadow-type" class="slider">
+                    <option value=""></option>
+                    <option value="inset">inset</option>
+                </select>
+
+                <p>color</p>
+                <input type="color" class="slider" id="color" value="#000000">
+                
+                <p>color opacity</p>
+                <input type="range" class="slider" id="color-opac" min="0" max="1" step="0.01" value="0.2">
+
+            </div>
+
+            <!-- codes -->
+            <div class="code">
+                <p class="code-out">box-shadow: <span id="type"></span> <span id="x-offset">10</span>px <span id="y-offset">10</span>px
+                    <span id="blurr">10</span>px <span id="spread">0</span>px rgba(<span id="red">0</span>, <span id="green">0</span>,
+                    <span id="blue">0</span>, <span id="opacity">0.2</span>);</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>
