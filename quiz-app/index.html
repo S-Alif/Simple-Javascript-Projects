@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Javascript Quiz App</title>
+</head>
+<body>
+
+    <!-- warning messege -->
+    <div class="warning-msg">
+        <h1>Do not try to cheat</h1>
+        <p id="chance">You have 1 chance</p>
+    </div>
+
+    <!-- preloader -->
+    <div class="preloader">
+        <h4 class="preloader-title">quiz app</h4>
+        <div class="preloader-line">
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+
+    <!-- info input -->
+    <section class="info">
+        <h3 class="info-title title">Enter your details</h3>
+    
+        <div class="info-box">
+            <input type="text" id="info-name" placeholder="Enter name">
+            <input type="text" id="info-email" placeholder="Enter Email">
+        </div>
+    
+        <button type="button" class="btn" id="take-quiz">take quiz</button>
+
+        <p class="error-msg">Please enter all the data properly</p>
+    </section>
+
+    <!-- rules -->
+    <section class="rules">
+        <h3 class="rule-title title">Rules of quiz</h3>
+
+        <ol>
+            <li>Do not try to cheat</li>
+            <li>Defocusing this tab more than twice will result in disqualificaltion</li>
+            <li>There are 10 quiz and the time limit is 10 minutes</li>
+            <li>60 seconds or one minute for each question. After that a new question will load and the current question will be auto submitted</li>
+            <li>Aside that, once you have clicked the <b>next</b> button, the next question will be loaded</li>
+            <li>You cannot go back to previous question, so choose your answer properly</li>
+            <li>The quiz is about <b>web development</b>, questions can be confusing, be sure to read them properly</li>
+        </ol>
+
+        <button type="button" class="btn" id="start-quiz">start quiz</button>
+    </section>
+
+
+    <!-- selecting difficulty -->
+    <section class="difficulty">
+        <h3 class="difficult-title title">Select Difficulty</h3>
+    
+        <div class="difficult-box">
+            <div class="box easy" id="easy">
+                <div class="img-box">
+                    <img src="imgs/easy.png" alt="easy">
+                </div>
+                <p>easy</p>
+            </div>
+            <div class="box medium" id="medium">
+                <div class="img-box">
+                    <img src="imgs/medium.png" alt="medium">
+                </div>
+                <p>medium</p>
+            </div>
+            <div class="box hard" id="hard">
+                <div class="img-box">
+                    <img src="imgs/hard.png" alt="hard">
+                </div>
+                <p>hard</p>
+            </div>
+        </div>
+    
+        <button type="button" id="diff-btn" class="btn">select</button>
+    </section>
+
+
+    <!-- question-tab -->
+    <section class="question-tab">
+        <div class="content">
+
+            <div class="counters">
+                <h4 class="time"><span id="seconds">00</span></h4>
+                <h4 class="ques-counter"> Quiz : <span id="count">0</span> / <span>10</span></h4>
+            </div>
+
+            <div class="questions">
+                <h3 id="question-box" class="question-box"></h3>
+            
+                <div class="options">
+                    <label for="option" class="opt">
+                        <input type="radio" name="option">
+                        <p></p>
+                    </label>
+                    <label for="option" class="opt">
+                        <input type="radio" name="option">
+                        <p></p>
+                    </label>
+                    <label for="option" class="opt">
+                        <input type="radio" name="option">
+                        <p></p>
+                    </label>
+                    <label for="option" class="opt">
+                        <input type="radio" name="option">
+                        <p></p>
+                    </label>
+
+                    <input type="text" id="correct-ans">
+                </div>
+            </div>
+
+            <button type="button" id="next-btn" class="btn">next</button>
+
+        </div>
+    </section>
+
+    <!-- show result -->
+    <section class="result">
+        <h3 class="result-title title">Your result</h3>
+
+        <div class="result-data">
+            <p>
+                <span class="material-icons-outlined">timer</span>
+                <span id="time">9:20</span>
+                <span>Elapsed time</span>
+            </p>
+            <p>
+                <span class="material-icons-outlined">percent</span>
+                <span id="percent">80%</span>
+                <span>Percentage</span>
+            </p>
+            <p>
+                <span class="material-icons-outlined">format_list_numbered</span>
+                <span id="counting">4 / 5</span>
+                <span>Correct Answer</span>
+            </p>
+        </div>
+
+        <button type="button" id="show-score" class="btn">show score</button>
+    </section>
+
+
+    <!-- score board -->
+    <section class="score-board">
+        <h3 class="score-board-title title">Score Board</h3>
+
+        <select id="select-category" class="show-category">
+            <option value="easy" selected>easy</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+        </select>
+
+        <div class="score-table">
+            <table>
+                <tr>
+                    <th colspan="4">Participant name : <span id="show-name"></span></th>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <th>Current Result</th>
+                    <th>Previous Result</th>
+                    <th>Best Result</th>
+                </tr>
+                <tr>
+                    <th>Time</th>
+                    <td id="curr-time"> - </td>
+                    <td id="pre-time"> - </td>
+                    <td id="best-time"> - </td>
+                </tr>
+                <tr>
+                    <th>Percentage</th>
+                    <td id="curr-perc"> - </td>
+                    <td id="pre-perc"> - </td>
+                    <td id="best-perc"> - </td>
+                </tr>
+                <tr>
+                    <th>Correct</th>
+                    <td id="curr-corr"> - </td>
+                    <td id="pre-corr"> - </td>
+                    <td id="best-corr"> - </td>
+                </tr>
+            </table>
+        </div>
+
+        <button type="button" id="take-quiz-again" class="btn">take quiz again</button>
+    </section>
+
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
