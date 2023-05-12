@@ -53,4 +53,10 @@ code.addEventListener('click', () => {
     window.getSelection().removeAllRanges()
     window.getSelection().addRange(range)
     document.execCommand('copy')
+
+    document.querySelector('.msg').innerText = "copied"
+
+    setTimeout(() => {
+        document.querySelector('.msg').innerText = "click on the code to copy"
+    }, 3000)
 })

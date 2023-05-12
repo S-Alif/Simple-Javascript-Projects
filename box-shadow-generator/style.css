@@ -34,8 +34,9 @@ body{
 
 /* content */
 .content{
-    max-width: 550px;
-    margin: 120px 0;
+    width: 600px;
+    max-width: calc(100% - 20px);
+    margin: 120px auto;
 }
 
 /* title */
@@ -93,7 +94,30 @@ body{
 .code{
     width: 100%;
     text-align: center;
+    padding: 10px;
+    background-color: aliceblue;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    position: relative;
 }
+.code:hover > .msg{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.code .msg{
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
 .code-out{
     font-weight: 700;
     cursor: pointer;
