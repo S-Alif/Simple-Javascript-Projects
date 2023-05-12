@@ -1,3 +1,4 @@
+/*this file has no use... i just wrote some sample questions*/
 const questions_easy = [
     {
         Q: "What is HTML",
